@@ -36,22 +36,24 @@ class SimpleLicenseSystem {
     // تحديث حالة Firebase
     updateFirebaseStatus(connected) {
         const statusDiv = document.getElementById('firebaseStatus');
-        if (connected) {
-            statusDiv.className = 'mt-6 p-4 rounded-lg glass-card border border-green-400';
-            statusDiv.innerHTML = `
-                <svg class="w-6 h-6 text-green-400 inline mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                </svg>
-                <span class="text-green-400 font-medium">متصل بـ Firebase - النظام جاهز</span>
-            `;
-        } else {
-            statusDiv.className = 'mt-6 p-4 rounded-lg glass-card border border-red-400';
-            statusDiv.innerHTML = `
-                <svg class="w-6 h-6 text-red-400 inline mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-                </svg>
-                <span class="text-red-400 font-medium">خطأ في الاتصال بـ Firebase</span>
-            `;
+        if (statusDiv) {
+            if (connected) {
+                statusDiv.className = 'mt-6 p-4 rounded-lg glass-card border border-green-400';
+                statusDiv.innerHTML = `
+                    <svg class="w-6 h-6 text-green-400 inline mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                    <span class="text-green-400 font-medium">متصل بـ Firebase - النظام جاهز</span>
+                `;
+            } else {
+                statusDiv.className = 'mt-6 p-4 rounded-lg glass-card border border-red-400';
+                statusDiv.innerHTML = `
+                    <svg class="w-6 h-6 text-red-400 inline mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                    <span class="text-red-400 font-medium">خطأ في الاتصال بـ Firebase</span>
+                `;
+            }
         }
     }
 

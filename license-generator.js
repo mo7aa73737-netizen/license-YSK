@@ -383,6 +383,14 @@ class YSKLicenseSystem {
             });
         }
 
+        const generateBtn = document.getElementById('generateBtn');
+        if(generateBtn) {
+            generateBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                this.handleGenerateLicense();
+            });
+        }
+
         // تحديث عرض السجل عند التحميل
         this.updateHistoryDisplay();
     }
